@@ -1,0 +1,116 @@
+:root {
+  --red-1:#3f1413;
+  --red-2:#531a19;
+  --red-3:#66211f;
+  --red-4:#7a2725;
+  --red-5:#8e2d2b;
+  --red-6:#a13431;
+  --red-7:#b53a37;
+
+  --gray-1:#5c5c5c;
+  --gray-2:#696969;
+  --gray-3:#767676;
+  --gray-4:#838383;
+  --gray-5:#8f8f8f;
+  --gray-6:#9c9c9c;
+  --gray-7:#a9a9a9;
+
+  --main-bg-color: var(--red-4);
+  --menu-text-color: var(--gray-7);
+  --titlebar-bg-color: var(--red-2);
+  --titlebar-bg-hover: var(--red-3);
+  --titlebar-bg-hover-alert: #f04747;
+  --titlebar-button-color: var(--gray-7);;
+  --menu-button-hover-color: var(--red-3);
+  --menu-button-selected-color: var(--red-1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  text-align: center;
+  color: var(--main-bg-color);
+  font-size: 3rem;
+  font-family: calibri;
+  color: white;
+}
+
+.background {
+  height: 100%;
+}
+
+.main-text {
+  font-size: 15px;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  white-space: nowrap;
+}
+
+.menu-button {
+  width: 100%;
+  height: 3.5rem;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 10px;
+  background-color: var(--titlebar-bg-color);
+  border: 0;
+  border-left: solid transparent;
+}
+
+.menu-button i {
+  color: var(--menu-text-color);
+  font-size: 20px;
+}
+
+.menu-button span {
+  font-size: 9px;
+  color: var(--menu-text-color);
+}
+
+.menu-button:hover {
+  background-color: var(--menu-button-hover-color);
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+.menu-button-selected {
+  background-color: var(--menu-button-selected-color);
+  border-left: solid var(--gray-7);
+}
+
+#appIcon {
+  width:50px;
+  height:50px;
+  margin: auto;
+	position: relative;
+  left: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#content {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+  align-items: center;
+}
+
+#blacklateralBorder {
+  background-color: var(--titlebar-bg-color);
+  height: 100%;
+  width: 70px;
+}
+
+#text {
+  flex-grow: 1;
+}
