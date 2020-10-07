@@ -5,7 +5,7 @@ import './style.css'
 
 import ElectronCustomization from './ElectronCustomization/ElectronCustomization';
 import LateralBorder from './LateralBorder/LateralBorder';
-import { faGlobeAmericas, faTheaterMasks, faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import { faFlag, faGlobeAmericas, faTheaterMasks, faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 class TaleManager extends React.Component {
 
@@ -14,9 +14,10 @@ class TaleManager extends React.Component {
     this.state = {
       selectedScreen: 2,
       buttons: [
-        { id: 1, icon: faGlobeAmericas, text: "Cenário" },
-        { id: 2, icon: faTheaterMasks, text: "Personagens" },
-        { id: 3, icon: faCommentDots, text: "Sobre" }
+        { id: 1, icon: faFlag, text: "Campanha" },
+        { id: 2, icon: faGlobeAmericas, text: "Cenário" },
+        { id: 3, icon: faTheaterMasks, text: "Personagens" },
+        { id: 4, icon: faCommentDots, text: "Sobre" }
       ]
     };
   }
@@ -33,6 +34,8 @@ class TaleManager extends React.Component {
         return 2;
       case 3:
         return 3;
+      case 4:
+        return 4;
       default:
         return null;
     }
