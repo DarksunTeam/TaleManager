@@ -40,6 +40,7 @@ div {
 
 .background {
   height: 100%;
+  width: 100%;
 }
 
 .main-text {
@@ -105,7 +106,7 @@ div {
   align-items: center;
 }
 
-#blacklateralBorder {
+#lateralBorder {
   background-color: var(--titlebar-bg-color);
   height: 100%;
   width: 70px;
@@ -113,4 +114,39 @@ div {
 
 #text {
   flex-grow: 1;
+}
+
+.btn-info {
+  background-color: var(--red-3);
+  border-color: var(--red-3);
+}
+
+.btn-info:active {
+  background-color: var(--red-2);
+  border-color: var(--red-4);
+}
+
+.btn-info:focus {
+  background-color: var(--red-2);
+  border-color: var(--red-4);
+  box-shadow: 0 0 0 0.2rem rgba(181, 58, 55, 0.5);
+}
+
+.btn-info:hover {
+  background-color: var(--red-2);
+  border-color: var(--red-4);
+}
+
+.btn-info:visited {
+  background-color: var(--red-2);
+  border-color: var(--red-4);
+}
+
+.btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active, .show > .btn-info.dropdown-toggle {
+  background-color: var(--red-2);
+  border-color: var(--red-4);
+}
+
+.btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus, .show > .btn-info.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(181, 58, 55, 0.5);
 }
