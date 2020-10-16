@@ -1,18 +1,20 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import { faFlag, faGlobeAmericas, faTheaterMasks, faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 import './style.css'
 
 import ElectronCustomization from './ElectronCustomization/ElectronCustomization';
 import LateralBorder from './LateralBorder/LateralBorder';
-import { faFlag, faGlobeAmericas, faTheaterMasks, faCommentDots } from '@fortawesome/free-solid-svg-icons';
+
+import CampaignScreen from './Campaign/CampaignScreen';
 
 class TaleManager extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      selectedScreen: 2,
+      selectedScreen: 1,
       buttons: [
         { id: 1, icon: faFlag, text: "Campanha" },
         { id: 2, icon: faGlobeAmericas, text: "Cenário" },
@@ -29,7 +31,7 @@ class TaleManager extends React.Component {
   ScreenSwitch() {
     switch (this.state.selectedScreen) {
       case 1:
-        return 1;
+        return <CampaignScreen />;
       case 2:
         return 2;
       case 3:
@@ -48,11 +50,9 @@ class TaleManager extends React.Component {
           <ElectronCustomization />
         </header>
         <div className="container-fluid background">
-          <div className="row justify-content-begin background">
+          <div className="row background">
             <LateralBorder selectedButton={this.state.selectedScreen} buttons={this.state.buttons} changeSelectedScreen={this.changeSelectedScreen} />
-            <div className="justify-content-begin">
-              {this.ScreenSwitch()}
-            </div>
+            {this.ScreenSwitch()}
           </div>
         </div>
       </div>

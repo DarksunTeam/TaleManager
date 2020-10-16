@@ -25,7 +25,7 @@ class LateralBorder extends React.Component {
     }
 
     return (
-      <div id="blacklateralBorder">
+      <div id="lateralBorder">
         <img id="appIcon" alt="" src={appIcon}></img>
         <div id="menu-buttons">
           <BorderButtons buttons={this.state.buttons} onClick={this.handleActiveButton} selectedButton={this.state.selectedButton} />

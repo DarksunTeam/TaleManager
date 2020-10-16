@@ -150,3 +150,26 @@ div {
 .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus, .show > .btn-info.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(181, 58, 55, 0.5);
 }
+
+.searchBar {
+  color: white;
+  padding: 6px;
+  border-style: solid;
+  border-right: 0;
+  font-size: 17px;
+  background-color: var(--red-3);
+  border-color: var(--red-5);
+}
+
+.searchBar:focus {
+  outline: none;
+}
+
+#searchButton{
+  font-size: 17px;
+  border: 2px;
+  border-left: 0;
+  border-radius: 0;
+  border-style: solid;
+  border-color: var(--red-5);
+}
