@@ -8,6 +8,7 @@ import ElectronCustomization from './ElectronCustomization/ElectronCustomization
 import LateralBorder from './LateralBorder/LateralBorder';
 
 import CampaignScreen from './Campaign/CampaignScreen';
+import AboutScreen from './About/AboutScreen';
 
 class TaleManager extends React.Component {
 
@@ -37,7 +38,7 @@ class TaleManager extends React.Component {
       case 3:
         return 3;
       case 4:
-        return 4;
+        return <AboutScreen />;
       default:
         return null;
     }
