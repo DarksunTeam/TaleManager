@@ -15,10 +15,22 @@ li.card-item {
     color: #333;
 }
 
-.card-info span {
-    font-size: 13px;
+.card-info .card-subtitles {
+    font-size: 15px;
     color: #999;
-    margin-top: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-description {
+    position: absolute;
+    float: right;
+    bottom: 4rem;
+    left: 0;
+    right: 0;
 }
 
 li.card-item p {

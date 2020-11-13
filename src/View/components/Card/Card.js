@@ -6,21 +6,22 @@ class Card extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      _id: props._id,
-      object: props.object
+      object: props.object,
+      onClick: props.onClick
     }
   }
 
   render() {
+    const button = { _id: null, card: this.props.object };
     return (
       <div className="col-3" style={{ padding: 0 }}>
         <li className="card-item">
           <div className="card-info">
             <strong>{this.state.object.title}</strong>
-            <span>{this.state.object.subtitles.join(', ')}</span>
+            <div className="card-subtitles">{this.state.object.subtitles.join(', ')}</div>
           </div>
-          <p>{this.state.object.description}</p>
-          <button className="btn btn-info btn-card">Visualizar</button>
+          <p className="card-description">{this.state.object.description}</p>
+          <button className="btn btn-info btn-card" onClick={() => this.state.onClick(button)} >Visualizar</button>
         </li>
       </div>
     );

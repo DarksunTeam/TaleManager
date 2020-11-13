@@ -13,7 +13,7 @@ class LateralBorder extends React.Component {
   }
 
   handleActiveButton = button => {
-    this.setState({ selectedButton: button.id });
+    this.setState({ selectedButton: button._id });
     this.state.changeSelectedScreen(button);
   }
 
@@ -46,7 +46,7 @@ class BorderButtons extends React.Component {
 
     return (
       buttons.map((button, index) =>
-        <button key={index} className={selectedButton === button.id ? "menu-button menu-button-selected" : "menu-button"} onClick={() => onClick(button)} >
+        <button key={index} className={selectedButton === button._id ? "menu-button menu-button-selected" : "menu-button"} onClick={() => onClick(button)} >
           <div className="main-text">
             <FontAwesomeIcon icon={button.icon} />
             <br />
