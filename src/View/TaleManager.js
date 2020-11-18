@@ -60,10 +60,12 @@ class TaleManager extends React.Component {
         <header>
           <ElectronCustomization />
         </header>
-        <div className="container-fluid background">
-          <div className="row background">
+        <div className="container-fluid">
+          <div className="row">
             <LateralBorder selectedButton={this.state.selectedScreen} buttons={this.state.buttons} changeSelectedScreen={this.changeSelectedScreen} />
-            {this.ScreenSwitch()}
+            <div id="workspace">
+              {this.ScreenSwitch()}
+            </div>
           </div>
         </div>
       </div>

@@ -6,7 +6,10 @@ header {
     color: black;
     align-self: stretch;
     -webkit-app-region: drag;
-    height: 25px;
+    height: var(--titlebar-height);
+    position: fixed;
+    width: 100%;
+    z-index:2
 }
 
 #titleBar {
@@ -15,7 +18,7 @@ header {
 
 .titlebar-option {
     color: var(--titlebar-button-color);
-    height: 25px;
+    height: var(--titlebar-height);
     width: 35px;
     text-align: center;
     font-size: 1rem;
@@ -26,18 +29,18 @@ header {
 #closeButton:hover {
     color: white;
     background-color: var(--titlebar-bg-hover-alert);
-    height: 25px;
+    height: var(--titlebar-height);
     width: 35px;
 }
 
 #maximizeButton:hover {
     background-color: var(--titlebar-bg-hover);
-    height: 25px;
+    height: var(--titlebar-height);
     width: 35px;
 }
 
 #minimizeButton:hover {
     background-color: var(--titlebar-bg-hover);
-    height: 25px;
+    height: var(--titlebar-height);
     width: 35px;
 }

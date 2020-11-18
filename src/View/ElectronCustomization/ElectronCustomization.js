@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowMinimize, faWindowMaximize, faWindowClose } from '@fortawesome/free-solid-svg-icons'; //faWindowRestore, 
 
 function ElectronCustomization() {
-  if(window && window.process && window.process.type){
+  if (window && window.process && window.process.type) {
     const ipcRenderer = window.require("electron").ipcRenderer;
     return (
       <div className="container" id="titleBar">
@@ -15,7 +15,7 @@ function ElectronCustomization() {
         </div>
       </div>
     );
-  }else{
+  } else {
     return null
   }
 }

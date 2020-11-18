@@ -31,11 +31,11 @@ class CampaignScreen extends React.Component {
         const btnNewCampaign = { _id: 5, card: new Campaign() };
         return (
             <div className="col">
-                <div className="row">
+                <div className="row search">
                     <input type="text" className="searchBar" placeholder="Pesquisar" value={this.state.filter} onChange={this.search} />
                     <button className="btn btn-info" id="searchButton" type="submit"><FontAwesomeIcon icon={faSearch} /></button>
                 </div>
-                <div className="row">
+                <div className="row screen-title">
                     <div className="col">
                         <h2>Campanha</h2>
                     </div>
