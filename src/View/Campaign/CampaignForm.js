@@ -1,6 +1,8 @@
 import React from '../../../node_modules/react';
 import TagsInput from 'react-tagsinput';
 import 'react-tagsinput/react-tagsinput.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 import Campaign from '../../Model/Campaign';
 
@@ -14,14 +16,15 @@ class CampaignForm extends React.Component {
             fileController: props.fileController,
             campaign: props.fileController.get('Campaign', props.selectedCard._id)
         };
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleReset = this.handleReset.bind(this);
         if (this.state.campaign != null) {
             this.baseState = JSON.parse(JSON.stringify(this.state.campaign));
         } else {
             this.state.campaign = new Campaign(this.state.fileController.getNewId('Campaign'), '', [], '', '', [], '');
         }
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleInputChange(event) {
@@ -51,7 +54,7 @@ class CampaignForm extends React.Component {
 
     handleSubmit() {
         if (this.baseState != null) {
-            this.state.fileController.removeObject('Campaign', this.baseState.fileName)
+            this.state.fileController.removeObject('Campaign', this.baseState.fileName);
         }
         this.state.fileController.setObject('Campaign', this.state.campaign);
     }
@@ -59,6 +62,13 @@ class CampaignForm extends React.Component {
     handleReset(event) {
         this.setState({ campaign: JSON.parse(JSON.stringify(this.baseState)) });
         event.preventDefault();
+    }
+
+    handleDelete() {
+        if (this.baseState != null) {
+            this.state.fileController.removeObject('Campaign', this.baseState.fileName);
+        }
+        this.state.fileController.removeObject('Campaign', this.state.campaign.fileName);
     }
 
     render() {
@@ -109,6 +119,9 @@ class CampaignForm extends React.Component {
                     </div>
                     <button className="btn btn-info" onClick={this.handleReset}>Desfazer</button>
                     <button className="btn btn-info" onClick={this.handleSubmit}>Salvar</button>
+                    <button className="btn btn-danger" onClick={this.handleDelete}>
+                        <FontAwesomeIcon icon={faTrashAlt} />
+                    </button>
                 </form>
             </div>
         );

@@ -55,7 +55,7 @@ class FileController {
 
   removeObject(type, fileName) {
     const path = this.darksunFolder + '/' + type + '/' + fileName;
-    fs.unlinkSync(path)
+    fs.unlinkSync(path);
   }
 }
 

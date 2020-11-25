@@ -6,6 +6,7 @@
   --red-5:#8e2d2b;
   --red-6:#a13431;
   --red-7:#b53a37;
+  --red-alert: #f04747;
 
   --gray-1:#5c5c5c;
   --gray-2:#696969;
@@ -19,7 +20,7 @@
   --menu-text-color: var(--gray-7);
   --titlebar-bg-color: var(--red-2);
   --titlebar-bg-hover: var(--red-3);
-  --titlebar-bg-hover-alert: #f04747;
+  --titlebar-bg-hover-alert: var(--red-alert) ;
   --titlebar-button-color: var(--gray-7);;
   --menu-button-hover-color: var(--red-3);
   --menu-button-selected-color: var(--red-1);
