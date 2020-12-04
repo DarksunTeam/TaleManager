@@ -64,11 +64,20 @@ class CampaignForm extends React.Component {
         event.preventDefault();
     }
 
-    handleDelete() {
-        if (this.baseState != null) {
-            this.state.fileController.removeObject('Campaign', this.baseState.fileName);
+    handleDelete(event) {
+        let confirmed = true;
+        if (window && window.process && window.process.type) {
+            const ipcRenderer = window.require("electron").ipcRenderer;
+            confirmed = ipcRenderer.sendSync("dialog");
         }
-        this.state.fileController.removeObject('Campaign', this.state.campaign.fileName);
+        if (confirmed) {
+            if (this.baseState != null) {
+                this.state.fileController.removeObject('Campaign', this.baseState.fileName);
+            }
+            this.state.fileController.removeObject('Campaign', this.state.campaign.fileName);
+        } else {
+            event.preventDefault();
+        }
     }
 
     render() {

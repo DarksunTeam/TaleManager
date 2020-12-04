@@ -2,7 +2,7 @@ const electron = require('electron');
 const { app } = electron;
 const { BrowserWindow } = electron;
 
-const { ipcMain } = require("electron");
+const { ipcMain, dialog } = require("electron");
 ipcMain.on("minimize", () => {
   mainWindow.minimize()
 });
@@ -14,6 +14,23 @@ ipcMain.on("close", () => {
 });
 ipcMain.on("isDev", (event) => {
   event.returnValue = isDev;
+});
+ipcMain.on("dialog", (event) => {
+  const options = {
+    type: 'warning',
+    buttons: ['Sim', 'Não'],
+    defaultId: 1,
+    title: 'Confirmação',
+    message: 'Deseja realmente apagar esta informação?',
+    detail: 'O arquivo com esses dados será excluído',
+    cancelId: 1
+  };
+  if (dialog.showMessageBoxSync(mainWindow, options) === 0) {
+    event.returnValue = true;
+  }
+  else {
+    event.returnValue = false;
+  }
 });
 
 const path = require('path');
