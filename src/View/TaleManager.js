@@ -8,6 +8,7 @@ import ElectronCustomization from './ElectronCustomization/ElectronCustomization
 import LateralBorder from './LateralBorder/LateralBorder';
 
 import CampaignScreen from './Campaign/CampaignScreen';
+import CharacterScreen from './Character/CharacterScreen';
 import AboutScreen from './About/AboutScreen';
 import CampaignForm from './Campaign/CampaignForm';
 
@@ -44,7 +45,7 @@ class TaleManager extends React.Component {
       case 2:
         return 2;
       case 3:
-        return 3;
+        return <CharacterScreen changeSelectedScreen={this.changeSelectedScreen} fileController={this.state.fileController} />;
       case 4:
         return <AboutScreen />;
       case 5:

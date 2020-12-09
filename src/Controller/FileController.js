@@ -3,10 +3,10 @@ const fs = window.require('fs');
 
 class FileController {
   constructor() {
-    this.folders = ['Campaign', 'Chars', 'Places'];
+    this.folders = ['Campaign', 'Character', 'Place'];
     this.Campaign = [];
-    this.Chars = [];
-    this.Places = [];
+    this.Character = [];
+    this.Place = [];
 
     this.darksunFolder = (window.require("electron").app || window.require("electron").remote.app).getPath('documents') + '/Darksun';
 
