@@ -11,6 +11,7 @@ import CampaignScreen from './Campaign/CampaignScreen';
 import CharacterScreen from './Character/CharacterScreen';
 import AboutScreen from './About/AboutScreen';
 import CampaignForm from './Campaign/CampaignForm';
+import CharacterForm from './Character/CharacterForm';
 
 import FileController from '../Controller/FileController';
 
@@ -18,8 +19,9 @@ class TaleManager extends React.Component {
 
   constructor(props) {
     super(props);
+    const initialScreen = Number(window.localStorage.getItem('selectedScreen') || 1);
     this.state = {
-      selectedScreen: 1,
+      selectedScreen: initialScreen,
       selectedCard: null,
       fileController: new FileController(),
       buttons: [
@@ -32,6 +34,11 @@ class TaleManager extends React.Component {
   }
 
   changeSelectedScreen = button => {
+    if (this.state.buttons.forEach(btn => {
+      if (btn._id === button._id) {
+        window.localStorage.setItem('selectedScreen', button._id)
+      }
+    }));
     this.setState({ selectedCard: button.card });
     this.setState({ selectedScreen: button._id });
   }
@@ -49,7 +56,9 @@ class TaleManager extends React.Component {
       case 4:
         return <AboutScreen />;
       case 5:
-        return <CampaignForm selectedCard={this.state.selectedCard} fileController={this.state.fileController} />
+        return <CampaignForm changeSelectedScreen={this.changeSelectedScreen} selectedCard={this.state.selectedCard} fileController={this.state.fileController} />
+      case 6:
+        return <CharacterForm changeSelectedScreen={this.changeSelectedScreen} selectedCard={this.state.selectedCard} fileController={this.state.fileController} />
       default:
         return null;
     }

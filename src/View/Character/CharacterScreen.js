@@ -19,7 +19,7 @@ class CharacterScreen extends React.Component {
     }
 
     handleButton = button => {
-        button._id = 5;
+        button._id = 6;
         this.state.changeSelectedScreen(button);
     }
 
@@ -28,7 +28,7 @@ class CharacterScreen extends React.Component {
     }
 
     render() {
-        const btnNewCharacter = { _id: 5, card: new Character() };
+        const btnNewCharacter = { _id: 6, card: new Character() };
         return (
             <div className="col">
                 <div className="row search">

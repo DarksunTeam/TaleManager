@@ -67,6 +67,10 @@ form button {
   margin: 5px;
 }
 
+.form-group {
+  margin-bottom: 0.2rem;
+}
+
 .background {
   height: 100%;
   width: 100%;
@@ -140,6 +144,7 @@ form button {
   height: 100%;
   width: var(--lateral-border-width);
   position: fixed;
+  z-index:2;
 }
 
 .btn-info {
@@ -182,7 +187,7 @@ form button {
   margin: 0;
   left: var(--lateral-border-width);
   top: var(--titlebar-height);
-  z-index:2
+  z-index:2;
 }
 
 .screen-title {
